@@ -1,0 +1,9 @@
+Description:
+    Set up app
+
+Example:
+    rails generate print new_app_name
+
+    Right now this will only change files in the app
+    that contain blue_print or BluePrint
+    to new_app_name or NewAppName

@@ -1,0 +1,9 @@
+---
+
+- name: add docker_opts
+  sudo: true
+  lineinfile:
+    dest: /etc/default/docker
+    line: "DOCKER_OPTS='-H unix:///var/run/docker.sock -H tcp://0.0.0.0:5555 --dns 172.17.42.1 --dns 8.8.8.8 --dns-search service.consul'"
+    state: present
+    create: yes

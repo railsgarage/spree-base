@@ -1,0 +1,13 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "railsgarage/spree-base",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "3000"
+    }
+  ],
+  "Logging": "/usr/src/app/log"
+}

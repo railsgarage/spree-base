@@ -1,0 +1,10 @@
+[Unit]
+Description=Docker Socket for the API
+
+[Socket]
+ListenStream=5555
+Service=docker.service
+BindIPv6Only=both
+
+[Install]
+WantedBy=sockets.target
