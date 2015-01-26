@@ -57,6 +57,18 @@ GIT
     spree_sample (3.0.0.beta)
       spree_core (= 3.0.0.beta)
 
+GIT
+  remote: git://github.com/spree/spree_auth_devise.git
+  revision: 9d47cfb837cb401721c5294b65f90df364fd912b
+  branch: master
+  specs:
+    spree_auth_devise (3.0.0)
+      devise (~> 3.4.1)
+      devise-encryptable (= 0.1.2)
+      json
+      multi_json
+      spree_core (~> 3.0.0.beta)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,6 +118,7 @@ GEM
       json
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
+    bcrypt (3.1.9)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -138,6 +151,15 @@ GEM
       nokogiri (~> 1.6.0)
       polyglot
       rails (>= 3.1)
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    devise-encryptable (0.1.2)
+      devise (>= 2.1.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
@@ -200,6 +222,7 @@ GEM
       json (~> 1.7)
       money (< 7.0.0)
       nokogiri (~> 1.4)
+    orm_adapter (0.5.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -246,6 +269,8 @@ GEM
       i18n
       polyamorous (~> 1.1)
     ref (1.0.5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -319,6 +344,8 @@ GEM
       activesupport (>= 3.2)
       railties (>= 3.2)
       tzinfo
+    warden (1.2.3)
+      rack (>= 1.0)
     webmock (1.20.4)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -339,6 +366,7 @@ DEPENDENCIES
   simplecov
   slim
   spree!
+  spree_auth_devise!
   therubyracer
   uglifier
   unicorn

@@ -7,6 +7,7 @@ gem 'rails', '>= 4.1.8'
 gem 'pg'
 
 gem 'spree', github: 'spree/spree'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
 
 # templates
 gem 'slim'
