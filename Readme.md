@@ -1,3 +1,6 @@
+#### Requirements
+ *  Ansible - `brew install ansible`
+
 #### Create Vagrant VM
 `
 vagrant up
