@@ -3,3 +3,13 @@
   gather_facts: False
   roles:
     - docker
+
+- name: pull spree-base image
+  hosts: all
+  tasks:
+    - command: docker pull railsgarage/spree-base
+
+- name: tag spree-base image
+  hosts: all
+  tasks:
+    - command: docker tag railsgarage/spree-base app
