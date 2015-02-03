@@ -12,11 +12,3 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require_directory './lib'
-//= require select2
-//= require './add_fields'
-//= require './remote'
-//= require './calendar'
-//= require './user_search'
-//= require 'global'
