@@ -1,9 +1,39 @@
 ---
 
+- name: install docker
+  shell: 'curl -sSL https://get.docker.io/ubuntu/ | sudo sh'
+
+- name: permissions for docker socket
+  sudo: true
+  shell: 'chmod 666 /var/run/docker.sock'
+
+- name: add vagrant user to docker group
+  sudo: yes
+  user:
+    name: vagrant
+    groups: docker
+    append: yes
+
+- name: install compose
+  sudo: true
+  shell: 'curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose'
+
+- name: make compose executable
+  sudo: yes
+  shell: 'chmod +x /usr/local/bin/docker-compose'
+
+- name: add dc alias
+  sudo: true
+  lineinfile:
+    dest: ~/.bashrc
+    line: "alias dc='docker-compose'"
+    state: present
+    create: yes
+
 - name: add docker_opts
   sudo: true
   lineinfile:
     dest: /etc/default/docker
-    line: "DOCKER_OPTS='-H unix:///var/run/docker.sock -H tcp://0.0.0.0:5555 --dns 172.17.42.1 --dns 8.8.8.8 --dns-search service.consul'"
+    line: "DOCKER_OPTS='-H unix:///var/run/docker.sock -H tcp://0.0.0.0:4444 --dns 172.17.42.1 --dns 8.8.8.8'"
     state: present
     create: yes

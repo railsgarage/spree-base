@@ -26,11 +26,9 @@ Vagrant.configure('2') do |config|
 
   config.vm.synced_folder ".", "/app", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp']
 
-  config.vm.provision 'docker'
-
   config.vm.provision 'ansible' do |ansible|
     ansible.limit = 'all'
-    ansible.playbook = 'provision/vagrant-playbook.yml'
+    ansible.playbook = 'provision/playbook.yml'
   end
 
 end

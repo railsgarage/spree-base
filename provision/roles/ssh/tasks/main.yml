@@ -1,0 +1,28 @@
+---
+
+# the ssh keys must be copied over so
+# private gems can be pulled from github.
+#
+- name: 'copy ssh key'
+  copy:
+    src: ~/.ssh/id_rsa
+    dest: ~/.ssh/id_rsa
+    mode: 0600
+    force: yes
+
+- name: 'copy public ssh key'
+  copy:
+    src: ~/.ssh/id_rsa.pub
+    dest: ~/.ssh/id_rsa.pub
+    mode: 0600
+    force: yes
+
+# this file prevents strict host checking
+# so there is no prompt when running bundle
+# install for the first time
+
+- name: 'create config file'
+  copy:
+    src: ssh_config
+    dest: ~/.ssh/config
+    force: yes

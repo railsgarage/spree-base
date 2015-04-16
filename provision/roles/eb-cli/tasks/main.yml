@@ -1,0 +1,14 @@
+---
+- name: Install dependencies for eb-cli
+  sudo: yes
+  apt: pkg={{ item }}
+  with_items:
+    - python-dev
+    - python-pip
+  tags: eb-cli
+
+- name: Install awsebcli
+  sudo: yes
+  pip:
+    name: awsebcli
+    

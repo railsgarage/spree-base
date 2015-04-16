@@ -1,0 +1,8 @@
+---
+
+- name: copy compose-up script
+  sudo: yes
+  copy:
+    src: compose-up.conf
+    dest: /etc/init/compose-up.conf
+    mode: 0644

@@ -2,7 +2,7 @@
 Description=Docker Socket for the API
 
 [Socket]
-ListenStream=5555
+ListenStream=4444
 Service=docker.service
 BindIPv6Only=both
 
