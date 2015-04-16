@@ -1,0 +1,10 @@
+postgres:
+  image: postgres:latest
+  ports:
+    - '5432:5432'
+  volumes:
+    - /docker/postgres/data:/var/lib/postgresql/data
+  environment:
+    POSTGRES_DB: app
+    POSTGRES_USER: rails
+    POSTGRES_PASSWORD: app

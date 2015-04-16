@@ -1,0 +1,29 @@
+- hosts: all
+  gather_facts: no
+  roles:
+    - docker
+    - ssh
+    - upstart
+    - eb-cli
+
+- name: containers
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: postgres
+      shell: 'docker-compose -f /app/compose/dev.yml up -d postgres'
+
+- name: install ruby
+  hosts: all
+  roles:
+    - role: rbenv
+      rbenv:
+        user: vagrant
+        version: HEAD
+        ruby_version: 2.1.5
+
+- name: install gems
+  hosts: all
+  tasks:
+    - name: bundler
+      command: 'sudo -iu vagrant gem install --no-ri --no-rdoc bundler'
