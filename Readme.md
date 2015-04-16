@@ -17,6 +17,8 @@ Spree-Base is a preconfigured environment for developing a Spree application.
  * `fig up -d postgres`
  * `fig run --rm util bundle exec rake db:create`
  * `fig run --rm util bundle exec rake db:migrate`
+ * `fig run --rm util bundle exec rake db:seed`
+ * `fig run --rm util bundle exec rake spree_sample:load`
  * `fig up app`
 
 ## Development
